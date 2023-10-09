@@ -1,0 +1,9 @@
+.cart{
+    margin: 10px;
+    width: 25%;
+    border: 3px solid grey;
+    border-radius: 35px;
+    text-align: center;
+    height: 350px;
+    
+}

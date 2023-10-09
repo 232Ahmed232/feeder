@@ -1,0 +1,107 @@
+<%- include('index.ejs') %>
+
+    <div class="container">
+        <div id="myPlot"></div>
+
+        <script>
+            const xArray = [20, 40, 70, 80, 90, 100, 110, 120, 130, 140, 150];
+            const yArray = [7, 8, 8, 9, 9, 9, 10, 11, 14, 14, 15];
+
+            // Define Data
+            const data = [{
+                x: xArray,
+                y: yArray,
+                mode: "lines"
+            }];
+
+            // Define Layout
+            const layout = {
+                xaxis: { range: [0, 150], title: "Days" },
+                yaxis: { range: [5, 16], title: "Users" },
+                title: "Number of Users"
+            };
+
+            // Display using Plotly
+            Plotly.newPlot("myPlot", data, layout);
+        </script>
+
+        <h2>Requests Rate</h2>
+
+        <div class="slide">
+            <div class="slc">
+                <h4>New Requests: 8</h4>
+            </div>
+            <div class="slc">
+                <h4>Requests completed: 80%</h4>
+            </div>
+            <div class="slc">
+                <h4>Requests Canceled: 20%</h4>
+            </div>
+        </div>
+
+       <hr>
+            <canvas id="myChart"></canvas>
+
+            <script>
+                var xValues = ["Italy", "France", "Spain", "USA", "Argentina"];
+                var yValues = [55, 49, 44, 24, 15];
+                var barColors = [
+                    "#b91d47",
+                    "#00aba9",
+                    "#2b5797",
+                    "#e8c3b9",
+                    "#1e7145"
+                ];
+
+                new Chart("myChart", {
+                    type: "pie",
+                    data: {
+                        labels: xValues,
+                        datasets: [{
+                            backgroundColor: barColors,
+                            data: yValues
+                        }]
+                    },
+                    options: {
+                        title: {
+                            display: true,
+                            text: "Users Around Globe"
+                        }
+                    }
+                });
+            </script>
+<hr>
+<canvas id="myCh" ></canvas>
+
+<script>
+var xValues = ["Mobile","Computer","Laptop"];
+var yValues = [55, 49, 44];
+var barColors = [
+  "#b91d47",
+  "#00aba9",
+  "#2b5797",
+  
+];
+
+new Chart("myCh", {
+  type: "doughnut",
+  data: {
+    labels: xValues,
+    datasets: [{
+      backgroundColor: barColors,
+      data: yValues
+    }]
+  },
+  options: {
+    title: {
+      display: true,
+      text: "Website Usage"
+    }
+  }
+});
+</script>
+
+
+    </div>
+
+    <%- include('footer.ejs') %>
